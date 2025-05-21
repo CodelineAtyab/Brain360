@@ -25,10 +25,10 @@ def clear_list(option):
 #Processs
 
 items = []
+print("\nWelcome to Shopping List Manager! \n1. Add item \n2. Remove item\n3. Show list \n4. Clear list \n5. Exit ")
 
 while True:
-    print("\nWelcome to Shopping List Manager! \n1. Add item \n2. Remove item\n3. Show list \n4. Clear list \n5. Exit ")
-    option = int(input("Choose an option:"))
+    option = int(input("\nChoose an option:"))
     if option == 1:
         add_items(option)
     if option == 2:
@@ -39,10 +39,3 @@ while True:
         clear_list(option)
     elif option == 5:
         break
-
-    
-# Call the function
-# add_items(option)
-# clear_list(option)
-# remove_items(option)
-# show_list(option)
