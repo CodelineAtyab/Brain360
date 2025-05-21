@@ -1,5 +1,5 @@
 
-line = 8
+line = int(input())
 
 for count in range(line):
     print(" " * (line - count) + "#" * count)
