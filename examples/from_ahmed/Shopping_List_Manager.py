@@ -5,19 +5,19 @@ cart=[]
 
 def add():
     while True:
-        item = input("Enter an item to add: ")
+        item = input("Enter an item to add or 'exit' to go back to options menu: ")
         if item == "exit":
             break
         cart.append(item)
-        print("added")
+        print("Item has been added")
 
 def rmv():
     while True:
-        item = input("Enter an item to remove: ")
+        item = input("Enter an item to remove or 'exit' to go back to options menu: ")
         if item == "exit":
             break
         cart.remove(item)
-        print("removed")
+        print("Item has been removed")
 
 def show():
     while True:
@@ -25,8 +25,13 @@ def show():
         # if  item == "exit":
         #     break
         # else:
+        print("Your shopping list:")
         print(cart)
-        break
+        print("Type 'exit' to go back to options menu")
+        back = input()
+        print()
+        if back == "exit":
+            break
 
 
 def clear():
@@ -34,8 +39,11 @@ def clear():
         item = input("Do you want to clear your list (yes/no)")
         if item == "yes":
             cart.clear()
-            print("cart cleared")
-            break
+            print("Your cart has been cleared")
+            print("Type 'exit' to go back to options menu")
+            back = input()
+            if back == "exit":
+                break
         elif item == "no":
             break
 
@@ -45,8 +53,8 @@ while True:
     print("2. Remove items from the shopping list")
     print("3. Show my shopping list")
     print("4. Clear my shopping list")
-    print("Type 'exit' to go back to options")
-    print("Type 'end' to end exit the shopping list")
+    print("While inside an option type 'exit' to go back to options menu")
+    print("While in options menu type 'end' to end exit the shopping list")
 
     option = input()
     if option == "1":
