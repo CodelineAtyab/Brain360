@@ -1,5 +1,6 @@
 shopping_list = []
 
+
 while True:
     print("  Shopping List Menu: ")
     print("1. Add item")
@@ -11,12 +12,13 @@ while True:
     choice = input("Choose a number from 1 to 5: ")
 
     if choice == "1":
-        item = input("What do you want to add to the list: ")
-        while item != "done":
-         item = input("What do you want to add to the list: ")
-         shopping_list.append(item)
-        else:
-            print("your shopping_list is: ")
+        while True:
+            item = input("What do you want to add to the list: ")
+            if item.lower() == "done":
+                break
+            else:
+                shopping_list.append(item)
+                #print("your shopping_list is: ")
 
     elif choice == "2":
         item = input("What do you want to remove from the list: ") 
@@ -27,7 +29,11 @@ while True:
             print(item, "is not in the list.")
 
     elif choice == "3":
-        print("Your shopping list:", shopping_list)
+        print("Your shopping list:")
+        count=1
+        for item in shopping_list:
+            print(count, "-",item)
+            count+=1
 
     elif choice == "4":
         shopping_list.clear()
