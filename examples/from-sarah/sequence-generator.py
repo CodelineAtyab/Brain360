@@ -1,4 +1,4 @@
-n = 5
+n = int(input("number of rows!: "))
 for i in range(1, n + 1):
     # Increasing part
     for j in range(1, i + 1):
