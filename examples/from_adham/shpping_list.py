@@ -24,7 +24,7 @@ def remove():
     print("not a number\n")
 
 def show():
-    if falcon==[]:
+    if falcon_list==[]:
         print("List is empty\n")
     else:
         print("My shopping list:")
