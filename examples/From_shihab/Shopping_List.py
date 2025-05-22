@@ -54,7 +54,7 @@ def exit():
 while True:
     print(" 1 For Add\n 2 For Remove\n 3 for Show Your List\n 4 Clear All Item\n 5 Exit")
     choose=input("Enter Thr number: ")
-    count =1
+    
 
     if choose == "1":
         add_item()
@@ -68,6 +68,5 @@ while True:
     elif choose == "5":
         exit()
         break
-
-
+    
     
