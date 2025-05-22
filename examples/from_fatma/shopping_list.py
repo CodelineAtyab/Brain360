@@ -1,11 +1,6 @@
 shopping_list=[]
 
 while True:
-    1=="Add item"
-    2=="Remove item"
-    3=="Show list"
-    4=="Clear list"
-    5=="Exit"
     print("Welcome to shopping list manager!")
     print("1. Add item\n2. Remove item\n3. Show list\n4. Clear list\n5. Exit")
     option=int(input("Choose an option: "))
