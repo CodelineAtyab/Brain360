@@ -26,7 +26,8 @@ def show():
         #     break
         # else:
         print("Your shopping list:")
-        print(cart)
+        for num in range(len(cart)):
+                print(f"{num + 1} . {cart[num]}")
         print("Type 'exit' to go back to options menu")
         back = input()
         print()
