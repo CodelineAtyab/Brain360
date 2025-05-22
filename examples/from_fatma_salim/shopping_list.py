@@ -15,27 +15,27 @@ while True :
       print (" item added ! ")
 
     elif choice == "2":
-        if shopping_list:
-            for i in range(len(shopping_list)):
-                print(f"{i + 1}. {shopping_list[i]}")
-            index = int(input("Enter item number to remove: "))
-            if 1 <= index <= len(shopping_list):
-                removed = shopping_list.pop(index - 1) # pop is used to remove item from shopping list  
-                print(f"'{removed}' removed from the list.")
-            else:
-                print("Invalid number.") 
-         
+     if shopping_list:
+        print("Your shopping list:")
+        for item in shopping_list:
+            print("- " + item)
+        item_to_remove = input("Enter item name to remove: ")
+        if item_to_remove in shopping_list:
+            shopping_list.remove(item_to_remove)
+            print(f"'{item_to_remove}' removed from the list.")
         else:
-            print("List is empty.")
+            print("Item not found in the list.")
+     else:
+         print("List is empty.")
+    
 
     elif choice == "3":
-        if shopping_list:
-            print("Your shopping list:")
-            for i in range(len(shopping_list)):
-                print(f"{i + 1}. {shopping_list[i]}")
-        else:
-            print("List is empty.")
-
+     if shopping_list:
+        print("Your shopping list:")
+        for item in shopping_list:
+            print("- " + item)
+     else:
+        print("List is empty.")
 
 
     elif choice == "4":
