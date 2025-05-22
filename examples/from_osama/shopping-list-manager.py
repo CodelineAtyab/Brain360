@@ -35,6 +35,12 @@ def clear():
         print("The cart is clear")
 
 
+def exit():
+    exit = str (input("Are you sure that you want to exit (y/n)? "))
+    if exit.lower == "y":
+        print("Thanks!")
+
+
 
 while do == True:
     print("Welcome to Shopping List Manager! \n 1. Add item \n 2. Remove item \n 3. Show list \n 4. Clear list \n 5. Exit")
@@ -48,3 +54,7 @@ while do == True:
         remove()
     elif inputted_option == 4:
         clear()
+    elif inputted_option == 5:
+        exit()
+        print("Thanks!")
+        break
