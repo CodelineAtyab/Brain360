@@ -19,7 +19,7 @@ while True: #Since it's always true, the loop keeps going forever.
         if op == 1:
             item = input("Enter an item to add: ")
             list_of_sh.append(item)
-            print(f"{item} added to the list!")
+            print(f"{item} added to the list!") #Allows to insert variables directly in strings (f"{item}")
 
         # Option 2: Remove item
         elif op == 2:
@@ -48,7 +48,7 @@ while True: #Since it's always true, the loop keeps going forever.
         # Option 5: Exit
         elif op == 5:
             print("Exiting Shopping List Manager. Goodbye!")
-            break
+            break #stops the loop and ends the program.
 
         # Invalid option
         else:
