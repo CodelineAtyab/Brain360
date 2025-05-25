@@ -36,7 +36,7 @@ def clear():
 
 
 def exit():
-    exit = str (input("Are you sure that you want to exit (y/n)? "))
+    exit = str(input("Are you sure that you want to exit (y/n)? "))
     if exit.lower == "y":
         print("Thanks!")
 
