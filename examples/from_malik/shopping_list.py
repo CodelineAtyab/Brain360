@@ -1,36 +1,22 @@
-# shopping_list = []
-# while True:
-#     item = input("Enter your shopping list (or 'done' to finish): ")
-#     if item.lower() == 'done':
-#         break
-#     shopping_list.append(item)
-#     #Printing the list of numbers
-# #print("shopping list:", shopping_list)
-# print("Shopping List:")
-# count = 1
-# for item in shopping_list:
-#     print(count ,"." , item)
-#     count += 1
-
-
-    #I want the shoping list as a string 
-
-
-#     shopping_list = []
-# count = 1
-
-# while True:
-#     item = input("Enter item (or 'done' to finish): ")
-#     if item.lower() == 'done':
-#         break
-#     shopping_list.append(item)
-
+shopping_list = []
 print("Welcome to Shopping List Manager!")
-# options = input("please choose one of the following \n 1. Add item \n 2. Remove item \n 3. Show list \n 4. Clear list \n 5. Exit)
-
-# print("please choose one of the following \n 1. Add item \n 2. Remove item \n 3. Show list \n 4. Clear list \n 5. Exit")       
-
-# options = input("p")
-# Choose an option: 1
-# Enter item to add: Milk
-# 'Milk' added to the list
+while True:
+    options = input("1. Add item \n 2. Remove item \n 3. Show list \n 4. Clear list \n 5. Exit \n Choose an option:")
+    if options == "1":
+        add_items = input("Enter item to add: ")
+        shopping_list.append(add_items)
+    elif options == "2":
+        item_to_remove = input("Enter the item you want to remove: ")
+        if item_to_remove in shopping_list:
+            shopping_list.remove(item_to_remove)
+            print(f"{item_to_remove} was removed.")
+        else:
+            print(f"{item_to_remove} is not in the list.")
+        print("Updated shopping list:", shopping_list)
+    elif options == "3":
+        print ("The shopping list: " , shopping_list)
+    elif options == "4":
+        shopping_list.clear()
+        print("Shopping list has been cleared.")
+    elif options.lower() == '5' or "eixt":
+        break
