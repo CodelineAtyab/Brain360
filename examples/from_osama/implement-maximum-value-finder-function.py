@@ -1,11 +1,17 @@
 database = []
 
 def largest_number():
-    max_num = database[0]
-    
+    large_number = database[0]
+    for i in database:
+        if i > large_number:
+            large_number = i
+    print(large_number)
 
-numbers_input = int(input("Enter the numbers and when you are done write (done) to get the largest number: "))
 
-while numbers_input != "done":
-    numbers_input = int(input("Enter the numbers and when you are done write (done) to get the largest number: "))
-    database.append(numbers_input)
+inputted_numbers = input("Enter the numbers when you are done write (done) to print the largest number you entered: ")
+
+while inputted_numbers != "done":
+    inputted_numbers = input("Enter the numbers when you are done write (done) to print the largest number you entered: ")
+    if inputted_numbers == "done":
+        largest_number()
+    database.append(inputted_numbers)
