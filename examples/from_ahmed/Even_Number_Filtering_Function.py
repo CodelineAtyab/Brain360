@@ -8,7 +8,7 @@ def even_number(original_list):
             pure_list.append(num)
     return pure_list
 
-print("Enter a set of even and odd numbers and type '999' once finished")
+print("Enter a set of even and odd numbers and type 'done' once finished")
 user_input = input()
 
 if user_input == '':
