@@ -23,6 +23,3 @@ print(num_list)
 print("Your list of even numbers is: ")
 evennum_list = even_number(num_list)
 print(evennum_list)
-print("Your list of even numbers in order: ")
-for num in evennum_list:
-    print(num)
