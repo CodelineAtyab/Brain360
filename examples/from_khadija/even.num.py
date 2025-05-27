@@ -12,5 +12,5 @@ def get_even_numbers(nums):
 even_numbers = get_even_numbers(numbers)
 
 # Output
-print(even_numbers)     # [2, 4, 6, 8, 10]
-print(numbers)          # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print("even numbers :", even_numbers)    
+print("numbers:", numbers)
