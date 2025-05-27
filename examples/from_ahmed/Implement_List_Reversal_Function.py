@@ -16,7 +16,4 @@ print("Your list items: ")
 print(first_list)
 print("Your reversed list items: ")
 print(second_list)
-print("Your reversed list items in order:")
-for item in second_list:
-    print(item)
     
