@@ -1,7 +1,7 @@
 list_of_num = []
 
 while True:
-    i_said = input("Write down numbers and enter 'exist' to view even numbers: ")
+    i_said = input("Write down numbers then enter 'exist' to view even numbers: ")
     
     if i_said == 'exist':
         break
