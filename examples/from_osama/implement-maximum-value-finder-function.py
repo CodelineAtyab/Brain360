@@ -5,7 +5,7 @@ def largest_number(database):
     for i in database:
         if i > large_number:
             large_number = i
-    print(large_number)
+    return large_number
 
 inputted_numbers = input("Enter the numbers when you are done write (done) to print the largest number you entered: ")
 if inputted_numbers == "done":
@@ -17,6 +17,6 @@ else:
 while inputted_numbers != "done":
     inputted_numbers = input("Enter the numbers when you are done write (done) to print the largest number you entered: ")
     if inputted_numbers == "done":
-        largest_number(database)
+        print(largest_number(database))
         break
     database.append(int(inputted_numbers))
