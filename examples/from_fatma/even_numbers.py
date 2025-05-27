@@ -6,10 +6,12 @@ def even_number(numbers):
         numbers.append(num)
     if numbers==[]:
         print("The list is empty")
+        return None
     else:
         even_num=[]
         for num in numbers:
             if num % 2 == 0:
                 even_num.append(num)
         print(even_num)
+        return even_num
 even_number(numbers)
