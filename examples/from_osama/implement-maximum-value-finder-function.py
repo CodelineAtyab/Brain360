@@ -1,6 +1,6 @@
 database = []
 
-def largest_number():
+def largest_number(database):
     large_number = database[0]
     for i in database:
         if i > large_number:
@@ -17,6 +17,6 @@ else:
 while inputted_numbers != "done":
     inputted_numbers = input("Enter the numbers when you are done write (done) to print the largest number you entered: ")
     if inputted_numbers == "done":
-        largest_number()
+        largest_number(database)
         break
     database.append(int(inputted_numbers))
