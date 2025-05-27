@@ -1,11 +1,24 @@
-def counter(input_list):
+#DECLARATION
+def count_element(input_list, element):
     """
-    This function takes a list and counts the frequency of each element.
+    This function takes a list and a specified element, and returns the count of that element in the list.
+    If the element is not in the list, it returns 0.
     """
-    freq = {}
+    count = 0
     for i in input_list:
-        freq[i] = freq.get(i, 0) + 1
-        print(i, freq[i])
-    return freq
+        if i == element:
+            count += 1
+    return count
 
-print(counter([1, 2, 3, 4, 5, 5, 5, 2, 2, 2, 2, 3]))
+#INPUT
+user_list_input = input("Enter a list of elements separated by spaces: ")
+#PROCESS INPUT
+user_list = user_list_input.strip().split()
+
+
+element_input = input("Enter the element you want to count: ")
+
+
+result = count_element(user_list, element_input)
+#PRINT
+print(f"The element '{element_input}' appears {result} times in the list.")
