@@ -8,29 +8,38 @@ while True:
     print("4. clear")
     print("5. exit")
     
-    item = input("What do you want to do? ").lower()
+    user_input = input("What do you want to do? ").lower()
 
-    if item == "1":
-        item = input("Enter your shopping item (when you finish enter 'exit'): ").lower()
-        shopping_list.append(item)
-        print(f"'{item}' added.")
-    
-    elif item == "2":
-        if item in shopping_list:
-            shopping_list.remove(item)
-            print(f"'{item}' removed.")
+    if user_input == "1":
+        item = input("Enter your shopping item (type 'exit' to cancel): ").strip()
+        if item.lower() != "exit":
+            shopping_list.append(item)
+            print(f"'{item}' added.")
+
+    elif user_input == "2":
+        item_to_remove = input("Enter the item you want to remove: ").strip()
+        if item_to_remove in shopping_list:
+            shopping_list.remove(item_to_remove)
+            print(f"'{item_to_remove}' removed.")
         else:
-            print(f"'{item}' Its not found in the list.")
+            print(f"'{item_to_remove}' is not in the list.")
 
-    elif item == "3":
-        print("Your shopping list:", shopping_list)
+    elif user_input == "3":
+        if shopping_list:
+            print("Your shopping list:")
+            for i, item in enumerate(shopping_list, start=1):
+                print(f"item {i}: \"{item}\"")
+        else:
+            print("Your shopping list is empty.")
 
-    elif item == "4":
+    elif user_input == "4":
         shopping_list.clear()
         print("Shopping list cleared.")
 
-    elif item.lower() == "5":
+    elif user_input == "5":
+        print("Goodbye!")
         break
+    
 
 
 
