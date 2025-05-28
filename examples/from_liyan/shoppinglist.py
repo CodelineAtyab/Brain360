@@ -1,3 +1,5 @@
+"this program is your personal shopping list you can add remove clear and show your list!!!!!!!!"
+
 shopping_list = []
 
 def add_item():
@@ -43,5 +45,5 @@ def main():
         else:
             print("Invalid option. Please choose again.")
 
-# Run the program
+
 main()
