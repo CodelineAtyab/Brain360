@@ -11,4 +11,4 @@ if input_number > 0:
         print("")
 
 else:
-    print("[Error]: Add the Positive Number Please")
+    print("[Error]: Please Add the Positive Number: ")
