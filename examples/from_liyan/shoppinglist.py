@@ -1,4 +1,4 @@
-"this program is your personal shopping list you can add remove clear and show your list!!!!!!!!"
+"this program is your personal shopping list you can add remove clear and show your list!!!!!!!"
 
 shopping_list = []
 
@@ -21,7 +21,7 @@ def clear_list():
 
 def show_list():
     if shopping_list:
-        print("Here’s your shopping list:")
+        print("Here is your shopping list:")
         for item in shopping_list:
             print("-", item)
     else:
