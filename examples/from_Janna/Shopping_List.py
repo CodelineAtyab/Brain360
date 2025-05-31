@@ -1,7 +1,8 @@
 shopping_list = []
-print("Welcome to Shopping List Manager!")
-print("1. Add item\n2. Remove item\n3. Show list\n4. Clear list\n5. Exit")
+
 while True:
+    print("Welcome to Shopping List Manager!")
+    print("1. Add item\n2. Remove item\n3. Show list\n4. Clear list\n5. Exit")
     n = int(input("Choose an option: "))
     if n == 1:
         while True:
