@@ -17,4 +17,3 @@ while True:
         freq(database, element)
         break
     database.append(inputted_number)
-    
