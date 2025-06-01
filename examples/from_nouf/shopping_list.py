@@ -33,8 +33,8 @@ def clear_list():
     shopping_list.clear()
     print("Shopping list is cleared.\n")
 
-    print("Welcome to Shopping List Manager!\n")
-    while True:
+print("Welcome to Shopping List Manager!\n")
+while True:
         print("1. Add item")
         print("2. Remove item")
         print("3. Show list")
