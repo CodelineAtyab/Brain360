@@ -12,5 +12,6 @@ while it_is_sum:
         database.append(float(inputted_numbers))
         
     if inputted_numbers == "done":
+        print(database)
         print(f"The Total is:", sum_list_elements(database))
         break
