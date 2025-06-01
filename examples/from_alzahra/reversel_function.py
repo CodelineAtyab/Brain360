@@ -12,6 +12,6 @@ def list_of_rev(lis_rev):
     new_list=[]
     for i in list_rev[::-1]:
         new_list.append(i)
-    print(new_list)
+    return new_list 
 
 list_of_rev(list_rev)
