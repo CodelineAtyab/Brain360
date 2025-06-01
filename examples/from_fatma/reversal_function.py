@@ -1,14 +1,18 @@
 my_list=[]
-def reverse_func(my_list):
-    n = int(input("enter the length of your list: "))
-    for i in range(n):
-        data = input("enter a data of list: ")
+
+while True:
+    data = input("enter a data to the list OR enter (done) to exit: ")
+    if data != "done":
         my_list.append(data)
-    if my_list ==[]:
+    else:
+        break
+
+def reverse_func(lst):
+    if lst ==[]:
         print(my_list)
     else:
         new_list=[]
-        for i in my_list[::-1]:
+        for i in lst[::-1]:
             new_list.append(i)
         print(new_list)
 
