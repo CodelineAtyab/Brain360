@@ -15,4 +15,4 @@ def list_of_rev(list_rev):
     return new_list
 
 print("The original list: ",list_rev)
-list_of_rev(list_rev)
+print("The reversal list is : ", list_of_rev(list_rev))
