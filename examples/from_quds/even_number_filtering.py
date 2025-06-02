@@ -1,4 +1,9 @@
 #User Story: Create Even Number Filtering Function
+numbers = []
+num = int(input("Enter the range of the list: "))
+for i in range(num):
+    user_input = int(input("enter the numbers: "))
+    numbers.append(user_input)
 def get_even_numbers(numbers):
     even_num = []  
     for number in numbers: 
@@ -6,7 +11,7 @@ def get_even_numbers(numbers):
             even_num.append(number) 
     return even_num
 
-numbers = [1,2,3,4,5,6,7,8,9,10]
+
 result = get_even_numbers(numbers)
 
 print('Output:', result)
