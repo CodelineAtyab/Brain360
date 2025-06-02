@@ -35,13 +35,14 @@ def show():
                 print(str(i + 1) + ". " + shopping_list[i])
 
 def clear():
-      shopping_list = []
-print("Shopping list cleared.")
+      #shopping_list = []
+      shopping_list.clear()
+      print("Shopping list cleared.")
 
 def exit():
      print("Goodbye!")
  # Ends the loop without using 'break'
-
+ 
 
 while running:
     print()
