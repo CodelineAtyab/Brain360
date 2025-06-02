@@ -11,10 +11,10 @@ while True:
 
 def reverse_my_list(my_list):
      new_list = my_list[::-1]
-     print(new_list)
+     print("The reverse list:", new_list)
 
 reverse_my_list(my_list)     
-print(my_list)
+print("The original list:", my_list)
 
 # def reverse_my_list(my_list):
 #      new_list = my_list[::-1]
