@@ -1,10 +1,14 @@
 # Declaration
-data_store_file_name = "./reg_users.txt"
+# Absolute Path VS Relative Path
+data_store_file_name = "./data/reg_users.txt"
 
-list_of_registered_users = [
-  {"name": "Mr.Admin", "email": "admin@Bbapp.com"},
-  {"name": "Mr.Guest", "email": "guest@Bbapp.com"}
-]
+# Load Data From File
+list_of_registered_users = []
+fo = open(data_store_file_name, "r")
+list_of_lines = fo.readlines()
+for line in list_of_lines:
+  list_of_registered_users.append(eval(line.strip()))
+fo.close()
 
 is_registering_users = True
 
@@ -29,5 +33,6 @@ while is_registering_users:
 # Process
 
 # Output
+
 for user_record in list_of_registered_users:
   print(user_record)
