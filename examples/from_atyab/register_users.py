@@ -4,11 +4,18 @@ data_store_file_name = "./data/reg_users.txt"
 
 # Load Data From File
 list_of_registered_users = []
-fo = open(data_store_file_name, "r")
-list_of_lines = fo.readlines()
+# fo = open(data_store_file_name, "r")
+# list_of_lines = fo.readlines()
+# for line in list_of_lines:
+#   list_of_registered_users.append(eval(line.strip()))
+# fo.close()
+
+list_of_lines = []
+with open(data_store_file_name, "r") as fo:
+  list_of_lines = fo.readlines()
+
 for line in list_of_lines:
   list_of_registered_users.append(eval(line.strip()))
-fo.close()
 
 is_registering_users = True
 
@@ -23,10 +30,11 @@ while is_registering_users:
     )
 
     # Store to file
-    fo = open(data_store_file_name, "a")
-    fo.write(str({"name": user_name_input, "email": user_email_input}) + "\n")
-    fo.close()
-
+    # fo = open(data_store_file_name, "a")
+    # fo.write(str({"name": user_name_input, "email": user_email_input}) + "\n")
+    # fo.close()
+    with open(data_store_file_name, "a") as fo:
+      fo.write(str({"name": user_name_input, "email": user_email_input}) + "\n")
   else:
     is_registering_users = False
 
