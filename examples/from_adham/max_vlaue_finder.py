@@ -8,15 +8,15 @@ def find_max_value(numbers):
             biggest = num
     return biggest
 
-# Ask the user to enter numbers
+
 data = input("Put some numbers separated by commas: ")
 items = data.split(",")
 nums = []
 
 for n in items:
-    nums.append(int(n))  # turn each string into a number
+    nums.append(int(n)) 
 
-# Use the function
+
 result = find_max_value(nums)
 
 if result is None:
