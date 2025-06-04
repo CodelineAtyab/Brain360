@@ -2,15 +2,6 @@
 
 num_list = []
 
-# def maximum(original_list):
-#     maxi_list = []
-#     for num in original_list:
-#         if original_list[0] < original_list[1]:
-#             continue
-#         elif original_list[1] > original_list[0]:
-#             maxi_list.append(num)
-#         return maxi_list
-
 def maximum(original_list):
     
     max_num = original_list[0]
