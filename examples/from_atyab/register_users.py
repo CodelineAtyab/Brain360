@@ -1,3 +1,7 @@
+import email_validation_utils
+
+print(__name__)
+
 # Declaration
 # Absolute Path VS Relative Path
 data_store_file_name = "./data/reg_users.csv"
@@ -26,18 +30,23 @@ while is_registering_users:
   
   if user_name_input != "done":
     user_email_input = input("Enter User Email: ")
-    list_of_registered_users.append(
-      {"name": user_name_input, "email": user_email_input}
-    )
 
-    # Store to file
-    # fo = open(data_store_file_name, "a")
-    # fo.write(str({"name": user_name_input, "email": user_email_input}) + "\n")
-    # fo.close()
+    # Make Sure Email Address is correct
+    if email_validation_utils.is_email_valid(email_string=user_email_input):
+      list_of_registered_users.append(
+        {"name": user_name_input, "email": user_email_input}
+      )
 
-    with open(data_store_file_name, "a") as fo:
+      # Store to file
+      # fo = open(data_store_file_name, "a")
       # fo.write(str({"name": user_name_input, "email": user_email_input}) + "\n")
-      fo.write(user_name_input + "," + user_email_input + "\n")
+      # fo.close()
+
+      with open(data_store_file_name, "a") as fo:
+        # fo.write(str({"name": user_name_input, "email": user_email_input}) + "\n")
+        fo.write(user_name_input + "," + user_email_input + "\n")
+    else:
+      print("[WARN] Email is invalid. Didn't store it ...")
   else:
     is_registering_users = False
 
@@ -46,3 +55,7 @@ while is_registering_users:
 # Output
 for user_record in list_of_registered_users:
   print(user_record)
+
+
+if __name__ == "__main__":
+  print("THIS IS THE MAIN APP SCRIPT")
