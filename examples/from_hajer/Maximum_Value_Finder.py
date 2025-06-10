@@ -9,7 +9,6 @@ def max_finder(numbers):
     return max_number
 
 values= input("Enter random values separated by spaces: ")
-
 if values == "":
     print("You didn't enter any value!")
 else:
