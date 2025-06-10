@@ -1,31 +1,27 @@
 
-
 freq_list = []
 
-def freq(nums_list, elment_count):
 
-    count = 0
-    new_list = []
+def freqc(data_list):
+    frequency_result = {}
+    for item in data_list:
+        if item in frequency_result:
+            frequency_result[item] += 1
+        else:
+            frequency_result[item] = 1
+    return frequency_result
 
-    for item in nums_list:
-        count = 0
-        for data in nums_list:
-            if item == data:
-                count = count + 1
-                new_list.append((f"The item: {item}", f"The frequncy: {count}"))
-    return new_list
 
-print("Enter a set of even and odd numbers and type 'done' once finished")
+print("Enter your elements and type 'done' once finished")
 user_input = input()
-el_count = 0
-if user_input == '':
-    print(freq_list)
-else:
-    while user_input != "done": 
-        freq_list.append(user_input)
-        user_input = input()
 
+while user_input != "done":
+    freq_list.append(user_input)
+    user_input = input()
 
-print("Your list of numbers and elemnt frequncy: ")
-final_list = freq(freq_list, el_count)
-print(final_list)
+freqs = freqc(freq_list)
+
+print("Your list of elements and their frequencies:")
+print(freq_list)
+for element, count in freqs.items():
+    print(f"the frequncy of {element}", f"is {count}")
