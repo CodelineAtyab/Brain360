@@ -11,7 +11,6 @@ list_of_sh = []
 
 # Start the main loop
 while True: #Since it's always true, the loop keeps going forever.
-    try: # used to catch errors in the program without crashing it.
         # Get user's choice
         op = int(input("Choose an option (1, 2, 3, 4, 5): "))
 
@@ -53,7 +52,3 @@ while True: #Since it's always true, the loop keeps going forever.
         # Invalid option
         else:
             print("Invalid option. Please choose a number between 1 and 5.")
-
-    # If user enters non-integer input
-    except ValueError: #is the specific error that occurs when try to convert something like "hello" into an integer or vise versa.
-        print("Please enter a valid number (1-5).")
