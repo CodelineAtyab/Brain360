@@ -6,4 +6,3 @@ if n > 0:
         print()
 else:
     print("Invalid Input! Please Enter a Positive Integer")
-    
