@@ -9,6 +9,7 @@ def user_input():
             break
         elif numbers =="":
             print("No value added❗")
+            return []
         else:
             list_num.append(int(numbers))
    
