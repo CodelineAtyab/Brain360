@@ -1,4 +1,3 @@
-count =0
 while True:
     user_input = (input("Enter Numbers Of Rows:"))
     if user_input == "" :
