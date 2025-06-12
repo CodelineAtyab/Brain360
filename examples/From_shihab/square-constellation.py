@@ -5,9 +5,13 @@ while True:
 
     if user_input <=0:
         print("Please Enter Number Greater Than 0 ")
-    for r in range(user_input):
+    else:
+        break
+
+
+for r in range(user_input):
         number ="*" * (user_input)
         print(number)
-    break
+                
 
     
