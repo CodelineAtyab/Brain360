@@ -1,11 +1,4 @@
-positive_number = int(input("Please Enter a Positive Number: "))
+count = int(input("Enter a positive number: "))
 
-for i in range(1, positive_number + 1):
-
-    for spaces in range(positive_number - i):
-        print(" ", end="")
-
-    for add_star in range(i):
-        print("*", end = " ")
-
-    print("")
+for i in range(1, count + 1):
+        print( " " * (count - i) + "*" * (2 * i - 1))
