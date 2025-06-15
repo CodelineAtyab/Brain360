@@ -2,8 +2,11 @@ from add_func import addfb
 from view_func import viewfb
 from update_func import upfb
 from delete_func import delfb
+import file_operations
 fblist = []
+data_file = "C:/PyStuff/Brain360/examples/from_ahmed/Core_Feedback_Management_System/Feedback_list.txt"
 
+file_operations.loadfb(data_file)
 
 while True:
     print("Type '1' to show the list of feedbacks")
@@ -23,3 +26,5 @@ while True:
         delfb(fblist)
     if menu == "done":
         break
+
+file_operations.savefb(data_file, fblist)
