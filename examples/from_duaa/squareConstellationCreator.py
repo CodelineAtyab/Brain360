@@ -1,0 +1,4 @@
+nums = int(input("Enter the num of row:"))
+nums = abs(nums)
+for num in range(1,nums+1):
+    print("*"*nums)
