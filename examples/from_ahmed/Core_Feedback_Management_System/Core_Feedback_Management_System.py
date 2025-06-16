@@ -6,7 +6,7 @@ import file_operations
 fblist = []
 data_file = "C:/PyStuff/Brain360/examples/from_ahmed/Core_Feedback_Management_System/Feedback_list.txt"
 
-file_operations.loadfb(data_file)
+fblist = file_operations.loadfb(data_file)
 
 def mainapp():
     while True:
@@ -27,7 +27,7 @@ def mainapp():
         if menu == "4":
             delfb(fblist)
         if menu == "done":
-            exit = input("Are you sure you want to exit? ")
+            exit = input("Are you sure you want to exit? (yes/no)")
             if exit == "yes":
                 break
             if exit == "no":
