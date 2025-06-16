@@ -6,7 +6,7 @@ def delfb(fblist):
             break
         delfbi = int(delfb)
         if delfbi < 0 or delfbi >= len(fblist):
-            print("Enter a correct ID number of feedback")
+            print(f"Enter a correct ID number of feedback from 0 to {len(fblist)-1}")
             continue
         del fblist[delfbi]
         print("Feedback removed")

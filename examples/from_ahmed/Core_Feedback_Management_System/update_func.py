@@ -8,8 +8,9 @@ def upfb(fblist):
             break
         fbi = int(fb)
         if fbi < 0 or fbi >= len(fblist):
-            print("Enter a correct ID bumber of feedback")
+            print(f"Enter a correct ID number of feedback from 0 to {len(fblist)-1}")
             continue
+        print(f"The current feed back: {fblist[fbi]}")
         refb = input("Type your updated feedback here: ")
         if re.match(r"[a-zA-Z0-9]", refb):
             fblist[fbi] = refb
