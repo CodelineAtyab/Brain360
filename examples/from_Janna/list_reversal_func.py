@@ -18,4 +18,4 @@ original_list = user_input()
 reversed_result = reverse_my_list(original_list)
 
 print(f"Original list: {original_list}")
-print(f"Reversed list: {reversed_result}") 
+print(f"Reversed list: {reversed_result}")
