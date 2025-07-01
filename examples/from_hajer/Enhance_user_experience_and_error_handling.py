@@ -1,79 +1,128 @@
-# Enhanced user's experience and error handling task
+import json
+import os
+import re
+
 feedback_list = []
 
-while True:
-    print("\n  The feedback options")
-    print("1. To show feedback")
-    print("2. To add feedback")
-    print("3. To update feedback")
-    print("4. To delete feedback")
-    print("5. Exit")
+def load_data():
+    print("\nanonymous feedback system")
+    print("loading your feedback...")
+    try:
+        if os.path.exists('feedback.json'):
+            with open('feedback.json', 'r') as f:
+                feedback_list.extend(json.load(f))
+            print(f"found {len(feedback_list)} saved feedback items\n")
+        else:
+            print("no saved feedback yet\n")
+    except:
+        print("can't load saved feedback!\n")
+
+def save_data():
+    try:
+        with open('feedback.json', 'w') as f:
+            json.dump(feedback_list, f)
+        print("feedback saved\n")
+    except:
+        print("couldn't save feedback\n")
+
+def is_valid(text):
+    if not text.strip():
+        print("feedback can't be empty")
+        return False
+    if not re.match("^[a-z0-9 ]+$", text.lower()):
+        print("only letters, numbers and spaces allowed")
+        return False
+    return True
+
+def add_feedback():
+    while True:
+        text = input("enter your feedback: ")
+        if is_valid(text):
+            feedback_list.append({
+                'id': len(feedback_list)+1,
+                'text': text
+            })
+            print("added successfully!")
+            save_data()
+            return
+
+def update_feedback():
+    if not feedback_list:
+        print("nothing to update\n")
+        return
+        
+    while True:
+        try:
+            item_id = int(input("enter id to update: "))
+            if 1 <= item_id <= len(feedback_list):
+                item = feedback_list[item_id-1]
+                print(f"\ncurrent: {item['text']}")
+                new_text = input("enter new text: ")
+                if is_valid(new_text):
+                    item['text'] = new_text
+                    print("updated successfully!")
+                    save_data()
+                    return
+            else:
+                print(f"please enter 1-{len(feedback_list)}")
+        except:
+            print("please enter a number")
+
+def delete_feedback():
+    if not feedback_list:
+        print("nothing to delete\n")
+        return
+        
+    while True:
+        try:
+            item_id = int(input("enter id to delete: "))
+            if 1 <= item_id <= len(feedback_list):
+                feedback_list.pop(item_id-1)
+                print("deleted successfully!")
+                save_data()
+                return
+            else:
+                print(f"please enter 1-{len(feedback_list)}")
+        except:
+            print("please enter a number")
+
+def show_feedback():
+    if not feedback_list:
+        print("no feedback yet\n")
+        return
+        
+    print("\nall feedback:")
+    for item in feedback_list:
+        print(f"{item['id']}. {item['text']}")
+    print(f"\ntotal: {len(feedback_list)} items\n")
+
+def main():
+    load_data()
     
-    choice = input("Choose an option: ")
-
-    if choice == "1":
-        if not feedback_list:
-            print("There is no feedback yet!")
+    while True:
+        print("menu ")
+        print("1. view feedback")
+        print("2. add feedback")
+        print("3. update feedback")
+        print("4. delete feedback")
+        print("5. exit")
+        
+        choice = input("choose an option: ")
+        
+        if choice == '1':
+            show_feedback()
+        elif choice == '2':
+            add_feedback()
+        elif choice == '3':
+            update_feedback()
+        elif choice == '4':
+            delete_feedback()
+        elif choice == '5':
+            save_data()
+            print("\ngoodbye! your feedback is saved.")
+            break
         else:
-            print("Feedback list:")
-            count = 1
-            for feedback in feedback_list:
-                print(str(count) + ". " + feedback)
-                count += 1
+            print("choosean option:\n")
 
-    elif choice == "2":
-        feedback = input("What is your feedback? ").strip()
-        if feedback == "":
-            print("You didn't write anything!")
-        else:
-            feedback_list.append(feedback)
-            print("Thank you, your feedback is added!")
-
-    elif choice == "3":
-        if not feedback_list:
-            print("Nothing to update!")
-        else:
-            print("Feedback list:")
-            count = 1
-            for feedback in feedback_list:
-                print(str(count) + ". " + feedback)
-                count = count + 1
-
-            try:
-                number = int(input("Choose a number to update: "))
-                if 1 <= number <= len(feedback_list):
-                    new_feedback = input("Write new feedback: ").strip()
-                    if new_feedback != "":
-                        feedback_list[number - 1] = new_feedback
-                        print("Your feedback is updated!")
-                    else:
-                        print("You can't leave this part empty!")
-                else:
-                    print("You chose an invalid option!")
-            except:
-                print("Please enter a valid option.")
-
-    elif choice == "4":
-        if not feedback_list:
-            print("Nothing to delete!")
-        else:
-            count = 1
-            for feedback in feedback_list:
-                print(str(count) + ". " + feedback)
-                count = count + 1
-
-            try:
-                number = int(input("Which number do you want to delete? "))
-                if 1 <= number <= len(feedback_list):
-                    feedback_list.pop(number - 1)
-                    print("Feedback deleted!")
-                else:
-                    print("You entered an invalid option!")
-            except:
-                print("Please enter a valid option!")
-
-    elif choice == "5":
-        print("Thank you, goodbye!")
-        break
-    else:
-        print("Please choose a valid option!")
+if __name__ == "__main__":
+    main()
