@@ -10,7 +10,7 @@ def run_app():
     feedback_entries = load_feedback(file_path)
 
     while True:
-        print("\n--- Anonymous Feedback System ---")
+        print("Anonymous Feedback System")
         print("1. Add Feedback")
         print("2. Display Feedback")
         print("3. Edit Feedback")
