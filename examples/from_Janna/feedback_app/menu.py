@@ -4,7 +4,7 @@ from update_feedback import update_feedback
 from delete_feedback import remove_feedback
 from file_io import load_feedback, save_feedback
 
-file_path = r"C:\Users\bbuser\Desktop\ML\feedback_data.txt"
+file_path = r"C:\Users\bbuser\Desktop\Brain360\examples\from_Janna\feedback_app\feedback_data.txt"
 
 def run_app():
     feedback_entries = load_feedback(file_path)
