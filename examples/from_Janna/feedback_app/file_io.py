@@ -12,13 +12,9 @@ def load_feedback(filepath):
     return feedbacks
 
 def save_feedback(filepath, entries):
-    try:
-        with open(filepath, "w") as file:
-            for item in entries:
-                file.write(item + "\n")
-        print("Feedback Saved to File.")
-    except Exception as e:
-        print(f"Error Saving File: {e}")
+    with open(filepath,"w") as file:
+        for item in entries:
+            file.write(item + "\n")
 
 if __name__ == "__main__":
     path = "sample.txt"

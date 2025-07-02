@@ -3,8 +3,10 @@ def display_feedback(feedbacks):
         print("There is no Feedback!")
         return
     print("Feedback Entries:")
-    for index, feedback in enumerate(feedbacks, 1):
+    index = 1
+    for feedback in feedbacks:
         print(f"{index}. {feedback}")
+        index += 1
     print()
 
 if __name__ == "__main__":
