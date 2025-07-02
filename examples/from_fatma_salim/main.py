@@ -3,8 +3,9 @@ from view import view_feedback
 from add import add_feedback
 from update import update_feedback
 from deleted import delete_feedback
+from storage import load_feedback, save_feedback
 
-feedback_list = []
+feedback_list = load_feedback()
 
 if __name__ == "__main__":
     while True:
@@ -20,6 +21,7 @@ if __name__ == "__main__":
         elif choice == '4':
             delete_feedback(feedback_list)
         elif choice == '5':
+            save_feedback(feedback_list)
             print("Bye!")
             break
         else:

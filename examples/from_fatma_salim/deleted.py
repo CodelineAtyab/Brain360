@@ -1,4 +1,5 @@
 from view import view_feedback
+from storage import save_feedback
 
 def delete_feedback(feedback_list):
     view_feedback(feedback_list)
@@ -6,13 +7,9 @@ def delete_feedback(feedback_list):
         num = int(input("Enter number to delete: ")) - 1
         if 0 <= num < len(feedback_list):
             feedback_list.pop(num)
-            print("Deleted.")
+            save_feedback(feedback_list)
+            print("✅ Deleted.")
         else:
-            print("Invalid number.")
+            print("❌ Invalid number.")
     except:
-        print("Enter a valid number.")
-
-if __name__ == "__main__":
-    sample = ["Good job", "Needs improvement"]
-    delete_feedback(sample)
-    print(sample)
+        print("❌ Enter a valid number.")
