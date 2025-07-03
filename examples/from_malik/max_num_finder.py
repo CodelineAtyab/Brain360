@@ -1,16 +1,12 @@
-def find_max_value_from_input():
-    numbers = [] 
+def find_max_value(nums):
+    if not nums:
+        return None
+    max_val = nums[0]
+    for n in nums[1:]:
+        if n > max_val:
+            max_val = n
+    return max_val
 
-    user_input = input("Enter numbers separated by commas: ")
+data = list(map(float, input("Enter numbers separated by spaces: ").split()))
 
-    for x in user_input.split(','):
-        numbers.append(int(x.strip()))
-
-    max_value = numbers[0]
-    for num in numbers:
-        if num > max_value:
-            max_value = num
-
-    print("The maximum number is:", max_value)
-
-find_max_value_from_input()
+print("Maximum value:", find_max_value(data))
