@@ -30,6 +30,7 @@ while True:
         delete_feedback = input("write what do you want to delet :")
         if delete_feedback in feedback:
             feedback.remove(delete_feedback)
+            
         else:
          print("this feedback is not in the list: ")
     if service == 5:
