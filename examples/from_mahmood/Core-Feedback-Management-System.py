@@ -1,3 +1,5 @@
+
+
 feedback=[]
 
 while True:
@@ -18,6 +20,12 @@ while True:
                 else:
                     print("\n your feedback is: ", feedback)
                     break
+    if  service == 3 :
+        update_feedback = input("what do you whant to do?(chouse from 1 to 3) ")
+        while update_feedback != "done":
+            if update_feedback == 3:
+                pass
+
     if service==4 :
         delete_feedback = input("write what do you want to delet :")
         if delete_feedback in feedback:
